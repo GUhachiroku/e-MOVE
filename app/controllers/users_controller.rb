@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     
-    #ユーザー登録後@userに行く
+    #ユーザー登録後@userに行く　user#showのアクションに強制移動
     if @user.save
       flash[:success] = "ユーザー登録しました。"
       redirect_to @user 
@@ -30,5 +30,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+  
   
 end

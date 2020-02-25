@@ -7,16 +7,18 @@
         </h3>
       </div>
       <div class="card-body">
-        <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+        <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 180 }) %>" alt="">
       </div>
     </div>
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item"><a href="#" class="nav-link">投稿一覧</a></li>
+      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link<%= "active" if current_page?(user_path(@user)) %>"></a>投稿一覧<span class="badge badge-secondary"><%= @aount_microposts %></span></a></li>
       <li class="nav-item"><a href="#" class="nav-link">フォロー</a></li>
       <li class="nav-item"><a href="#" class="nav-link">フォロワー</a></li>
     </ul>
+    <%= render "microposts/microposts", microposts: @microposts %> 
+   
   </div>
   
   

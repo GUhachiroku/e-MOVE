@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "toppages#index"
+  root to: "microposts#index"
   
   #した三つはログイン機能
   get "login", to: "sessions#new"
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   #サインアップぺージのurlを/signupにするため。なくてもよい
   get "signup", to: "users#new"
   resources :users, only: [:index, :show, :new, :create]
+  resources :microposts, only: [:index, :new, :create, :edit, :update, :destroy]
   
-  resources :microposts, only: [:index, :create, :destroy]
+  
 end

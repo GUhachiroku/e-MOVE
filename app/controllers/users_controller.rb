@@ -20,8 +20,9 @@ class UsersController < ApplicationController
     
     #ユーザー登録後@userに行く　user#showのアクションに強制移動
     if @user.save
+      
       flash[:success] = "ユーザー登録しました。"
-      redirect_to @user 
+      redirect_to root_path
     else
       flash.now[:danger] = "ユーザーの登録に失敗しました。"
       render :new

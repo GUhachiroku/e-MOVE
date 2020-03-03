@@ -1,21 +1,21 @@
-<ul class="list-unstyled">
+<div>
   <% microposts.each do |micropost| %>
-    <li class="media mb-3">
-      <img class="mr-2 rounded" src="<%= gravatar_url(micropost.user, { size: 50 }) %>" alt="">
+    <div class="media mb-2">
+      <img class="mr-2 rounded" src="<%= gravatar_url(micropost.user, { size: 40 }) %>" alt="">
       <div class="media-body">
         <div>
-          <%= link_to micropost.user.name, user_path(micropost.user) %> <span class="text-muted">posted at <%= micropost.created_at %></span>
+          <%= link_to micropost.user.name, user_path(micropost.user) %> <span class="text-muted">・ <%= l micropost.created_at, format: :short %></span>
         </div>
-        <div>
-          <p><%= micropost.content %></p>
-        </div>
+          <p><%= simple_format(micropost.content) %></p>
         <div>
           <% if current_user == micropost.user %>
           <%= link_to "削除", micropost, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" }, class: "btn btn-danger btn-sm" %>
+          
           <% end %>
         </div>
+        
       </div>
-    </li>
+    </div>
   <% end %>
   <%= paginate microposts %>
-</ul>
+</div>

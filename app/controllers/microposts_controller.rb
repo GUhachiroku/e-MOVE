@@ -24,11 +24,11 @@ class MicropostsController < ApplicationController
   end
   
   def edit
-    @micropost = Micropost.find_by(id: params[:id])
+    @micropost = Micropost.find(params[:id])
   end
     
   def update
-    @micropost = Micropost.find_by(id: params[:id])
+    @micropost = Micropost.find(params[:id])
     if @micropost.update(micropost_params)
       flash[:success] = "メッセージは編集されました。"
       rederect_to @micropost
@@ -38,9 +38,6 @@ class MicropostsController < ApplicationController
     end
   end
     
-  
-    
-
   def destroy
     @micropost.destroy
     flash[:success] = "メッセージを削除しました。"

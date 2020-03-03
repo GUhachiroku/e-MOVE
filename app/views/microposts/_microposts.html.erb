@@ -10,7 +10,7 @@
         <div>
           <% if current_user == micropost.user %>
           <%= link_to "削除", micropost, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" }, class: "btn btn-danger btn-sm" %>
-          
+          <%= link_to "編集", edit_micropost_path(@micropost.id) %>
           <% end %>
         </div>
         

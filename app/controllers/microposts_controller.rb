@@ -19,7 +19,7 @@ class MicropostsController < ApplicationController
     else 
       @microposts = current_user.microposts.order(id: :desc).page(params[:page])
       flash.now[:danger] = "メッセージの投稿に失敗しました。"
-      render "toppages/index"
+      render :new
     end
   end
   
@@ -31,7 +31,7 @@ class MicropostsController < ApplicationController
     @micropost = Micropost.find(params[:id])
     if @micropost.update(micropost_params)
       flash[:success] = "メッセージは編集されました。"
-      rederect_to @micropost
+      redirect_to root_url
     else
       flash.now[:danger] = "メッセージは編集されませんでした。"
       render :edit
@@ -48,7 +48,7 @@ class MicropostsController < ApplicationController
   private
   
   def micropost_params
-    params.require(:micropost).permit(:content)
+    params.require(:micropost).permit(:content, :image)
   end
   
   def correct_user

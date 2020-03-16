@@ -14,8 +14,32 @@
  *= require_self
  */
 
-body{
-  padding-top: 80px;
-  
+body {
+    padding-top: 60px;
 }
 
+
+/*userマーク*/
+.fa-user-circle {   
+    color: #eeeeee;
+    font-size: 2rem;
+    margin-top: 4px;
+}
+
+
+.text-muted {
+    display: inline-block;
+    height: 20px;              /* 高さ指定 */
+}
+
+#menu1 {
+    float: right;
+}
+
+.media-body {
+    margin-top: 2px;
+}
+
+img {
+    margin: 5px;
+}

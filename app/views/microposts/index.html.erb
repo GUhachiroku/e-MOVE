@@ -1,9 +1,12 @@
-<%= form_tag microposts_path, :method => "get" do %>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag "検索", :content => nil %>
-<% end %>       
-
-
-<div class="col-sm-5 col-xs-12">
-  <%= render "microposts/microposts", microposts: @microposts %>
+<div class="row">
+  <div style="margin: 15px;">
+    <%= form_tag microposts_path, :method => "get" do %>
+    <%= text_field_tag :search, params[:search], placeholder: "キーワード検索" %>
+    <%= submit_tag "検索", :content => nil %>
+    <% end %>       
+  </div>
+  
+  <div class="col-lg-7">
+    <%= render "microposts/microposts", microposts: @microposts %>
+  </div>
 </div>

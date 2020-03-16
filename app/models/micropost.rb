@@ -3,6 +3,8 @@ class Micropost < ApplicationRecord
   
   validates :content, presence: true, length: { maximum: 255 }
   
+  mount_uploader :image, ImageUploader
+  
   def self.search(search)
     if search
       Micropost.where(["content LIKE ?", "%#{search}%"])

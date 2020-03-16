@@ -1,21 +1,40 @@
 <div>
   <% microposts.each do |micropost| %>
-    <div class="media mb-2">
+    <div class="media mb-8 border">
       <img class="mr-2 rounded" src="<%= gravatar_url(micropost.user, { size: 40 }) %>" alt="">
       <div class="media-body">
         <div>
           <%= link_to micropost.user.name, user_path(micropost.user) %> <span class="text-muted">・ <%= l micropost.created_at, format: :short %></span>
+          <span class="text-muted" id="menu1">
+            <div class="dropdown dropleft" "media-body">
+              <button class="btn dropdown-toggle btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onfocus="this.blur();">
+              <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-menu rounder-lg shadow" aria-labelledby="dropdownMenuButton">
+                <% if current_user == micropost.user %>
+                  <div class="dropdown-item"><i class="far fa-trash-alt"></i><%= link_to "　削除", micropost, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %></div>
+                  <div class="dropdown-item"><i class="far fa-edit"></i><%= link_to "　編集", edit_micropost_path(micropost) %></div>
+                <% else %>
+                  <div class="dropdown-item"><i class="far fa-flag"></i>　報告</div>
+                <% end %>
+              </div>
+            </div>
+          </span>
         </div>
-          <p><%= simple_format(micropost.content) %></p>
-        <div>
-          <% if current_user == micropost.user %>
-          <%= link_to "削除", micropost, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" }, class: "btn btn-danger btn-sm" %>
-          <%= link_to "編集", edit_micropost_path(@micropost.id) %>
-          <% end %>
-        </div>
+        <%= simple_format(micropost.content) %>
+        <%= image_tag @micropost.image.url if @micropost.image? %>
+        <!--<div>-->
+        <!--  <% if current_user == micropost.user %>-->
+        <!--  <%= link_to "削除", micropost, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" }, class: "dropdown-item" "btn btn-danger btn-sm" %>-->
+        <!--  <%= link_to "編集", edit_micropost_path(micropost), class: "dropdown-item" "btn btn-light btn-sm" %>-->
+        <!--  <% end %>-->
+        <!--</div>-->
+        
+        
         
       </div>
     </div>
   <% end %>
+  <br>
   <%= paginate microposts %>
 </div>

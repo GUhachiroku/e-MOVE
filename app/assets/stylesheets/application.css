@@ -22,7 +22,6 @@ body {
 /*userマーク*/
 .fa-user-circle {   
     color: #eeeeee;
-    /*font-size: 2rem;*/
     margin-top: 4px;
 }
 
@@ -40,11 +39,33 @@ body {
     margin-top: 2px;
 }
 
-img {
-    margin-right: 10px;
-    margin-top: 4px;
-    max-width: 90%;
+#img {
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 10px;
     
 }
 
+img {
+    max-width: 100%;
+    
+}
 
+#icon1 {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-right: -5px;
+}
+
+
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(20px) rotate(-315deg);
+  transform: translateY(20px) rotate(-315deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-20px) rotate(315deg);
+  transform: translateY(-20px) rotate(315deg);
+}

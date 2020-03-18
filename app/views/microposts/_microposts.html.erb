@@ -2,9 +2,13 @@
   <% microposts.each do |micropost| %>
     <div class="media mb-8 border">
       <%if micropost.user.image? %>
+        <div id="img">
           <%= image_tag micropost.user.image.url, :size => "48x48", :style => "border-radius: 50%;" %>
+        </div>
       <% else %>
-        <i class="fas fa-user-circle", style="font-size: 3rem; margin-right: 10px;"></i>
+        <div id="icon1">
+          <i class="fas fa-user-circle", style="font-size: 3rem; margin-right: 10px;"></i>
+        </div>
       <% end %>
       <div class="media-body">
         <div>

@@ -1,7 +1,11 @@
 <div>
   <% microposts.each do |micropost| %>
     <div class="media mb-8 border">
-      <img class="mr-2 rounded" src="<%= gravatar_url(micropost.user, { size: 40 }) %>" alt="">
+      <%if micropost.user.image? %>
+          <%= image_tag micropost.user.image.url, :size => "48x48", :style => "border-radius: 50%;" %>
+      <% else %>
+        <i class="fas fa-user-circle", style="font-size: 3rem; margin-right: 10px;"></i>
+      <% end %>
       <div class="media-body">
         <div>
           <%= link_to micropost.user.name, user_path(micropost.user) %> <span class="text-muted">・ <%= l micropost.created_at, format: :short %></span>
@@ -22,16 +26,7 @@
           </span>
         </div>
         <%= simple_format(micropost.content) %>
-        <%= image_tag @micropost.image.url if @micropost.image? %>
-        <!--<div>-->
-        <!--  <% if current_user == micropost.user %>-->
-        <!--  <%= link_to "削除", micropost, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" }, class: "dropdown-item" "btn btn-danger btn-sm" %>-->
-        <!--  <%= link_to "編集", edit_micropost_path(micropost), class: "dropdown-item" "btn btn-light btn-sm" %>-->
-        <!--  <% end %>-->
-        <!--</div>-->
-        
-        
-        
+        <%= image_tag micropost.image.url if micropost.image? %>
       </div>
     </div>
   <% end %>

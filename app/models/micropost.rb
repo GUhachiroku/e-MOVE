@@ -12,4 +12,7 @@ class Micropost < ApplicationRecord
       Micropost.all
     end
   end
+  
+  
+  
 end

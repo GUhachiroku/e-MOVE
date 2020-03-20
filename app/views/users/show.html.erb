@@ -1,34 +1,34 @@
-<div class="row">
-  <aside class="coi-sm-4">
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">
-          <%= @user.name %>
-        </h3>
-      </div>
-      <div class="card-body">
+<div class="split">
+  <div class="split-item split-left">
+    <div class="split-left__inner">
+      チャンネル
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <h3 class="text-center"><%= @user.name %></h3>
+      <div>
         <%if @user.image? %>
-            <%= image_tag @user.image.url, :size => "200x200", :style => "border-radius: 50%;" %>
+          <%= image_tag @user.image.url, :size => "144x144", :style => "border-radius: 50%; margin-left: 50px;" %>
         <% else %>
-          <i class="fas fa-user-circle", style="font-size: 13rem;"></i>
+          <i class="fas fa-user-circle", style="font-size: 9rem;"></i>
         <% end %>
       </div>
+      <%= link_to "プロフィールの編集", edit_user_path if current_user == @user %>
+      <%= @user.self_introduction %>
+      <ul class="nav nav-tabs nav-justified mb-3">
+        <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link<%= "active" if current_page?(user_path(@user)) %>"></a>投稿一覧<span class="badge badge-secondary"><%= @aount_microposts %></span></a></li>
+      </ul>
+      <%= render "microposts/microposts", microposts: @microposts %>         
     </div>
-  </aside>
-  
-  
-  <%= link_to "プロフィールの編集", edit_user_path if current_user == @user %>
- 
-  
-  
-  <div class="col-lg-8">
-    <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link<%= "active" if current_page?(user_path(@user)) %>"></a>投稿一覧<span class="badge badge-secondary"><%= @aount_microposts %></span></a></li>
-    </ul>
-    <%= render "microposts/microposts", microposts: @microposts %> 
-   
+    <div class="split-item split-right col-md-3">
+      <div class="split-right__inner">
+        お知らせ
+      </div>
+    </div>
   </div>
-  
-  
-  
 </div>
+
+
+ 
+   

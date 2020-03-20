@@ -1,6 +1,6 @@
 <div>
   <% microposts.each do |micropost| %>
-    <div class="media mb-8 border">
+    <div class="media border">
       <%if micropost.user.image? %>
         <div id="img">
           <%= image_tag micropost.user.image.url, :size => "48x48", :style => "border-radius: 50%;" %>

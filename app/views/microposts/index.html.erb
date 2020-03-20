@@ -1,17 +1,25 @@
-<div class="row">
+
   <!--<div style="margin: 15px;">-->
   <!--  <%= form_tag microposts_path, :method => "get" do %>-->
   <!--  <%= text_field_tag :search, params[:search], placeholder: "キーワード検索" %>-->
   <!--  <%= submit_tag "検索", :content => nil %>-->
   <!--  <% end %>       -->
   <!--</div>-->
-  <div class="col-sm-3">
-    サイドバー
+<div class="split">
+  <div class="split-item split-left">
+    <div class="split-left__inner">
+      left
+    </div>
   </div>
-  <div class="col-sm-6">
-    <%= render "microposts/microposts", microposts: @microposts %>
-  </div>
-  <div class="col-sm-3">
-    お知らせ
+    <div class="row">
+      <div class="col-md-9">
+        <%= render "microposts/microposts", microposts: @microposts %>
+      </div>
+    <div class="split-item split-right col-md-3">
+      <div class="split-right__inner">
+        koukou
+      </div>
+    </div>
   </div>
 </div>
+  

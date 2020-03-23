@@ -5,4 +5,6 @@ class ToppagesController < ApplicationController
   #     @microposts = Micropost.order(id: :desc).page(params[:page])
    
   # end
+  
+  
 end

@@ -11,6 +11,6 @@ Rails.application.routes.draw do
  
   resources :users, only: [:index, :show, :new, :create, :edit, :update]
   resources :microposts, only: [:index, :new, :create, :edit, :update, :destroy]
-  
-  
+  resources :inquiries, only: [:new, :create]
+  resources :rooms, only: [:index, :show]
 end

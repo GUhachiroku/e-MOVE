@@ -1,0 +1,19 @@
+<div class="col-lg-7 container">
+  <h1 class="text-center">お問い合わせ</h1>
+  <%= form_with(model: @inquiry, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "名前" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :content, "内容" %>
+      <%= f.text_area :content, class: "form-control", rows: 4 %>
+    </div>
+    <%= f.submit "送信", class: "btn btn-primary", :style => "float: right;" %>
+  <% end %>
+    
+</div>

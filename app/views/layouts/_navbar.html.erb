@@ -9,6 +9,7 @@
         
         <% if logged_in? %>
           <li class="nav-item active"><%= link_to "新規作成", new_micropost_path, class: "nav-link" %></li>
+          <li class="nav-item active"><%= link_to "お問い合わせ", new_inquiry_path, class: "nav-link" %></li>
           <li class="nav-item active">
             <%= link_to user_path(current_user), target: "_self" do %>
               <%if current_user.image? %>
@@ -24,6 +25,7 @@
             <li class="nav-item active"><%= link_to "新規作成", login_path, class: "nav-link" %></li>
             <li class="nav-item active"><%= link_to "サインアップ", signup_path, class: "nav-link" %></li>
             <li class="nav-item active"><%= link_to "ログイン", login_path, class: "nav-link" %></li>
+          </div>
         <% end %>      
           
       </ul>

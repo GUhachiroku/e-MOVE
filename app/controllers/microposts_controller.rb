@@ -3,7 +3,8 @@ class MicropostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
   
   def index
-    @micropost = current_user.microposts.build if logged_in?  # form_with 用
+    @rooms = Room.all
+    @micropost = current_user.microposts.build if logged_in?
     @microposts = Micropost.order(id: :desc).search(params[:search]).page(params[:page]).per(10)
   end
   
@@ -12,14 +13,17 @@ class MicropostsController < ApplicationController
   end
   
   def create
+    @room = Room.find(params[:room_id])
     @micropost = current_user.microposts.build(micropost_params)
+    @micropost.room = @room
     if @micropost.save
       flash[:success] = "メッセージを投稿しました。"
-      redirect_to root_url
+      redirect_to @room
     else 
       @microposts = current_user.microposts.order(id: :desc).page(params[:page])
       flash.now[:danger] = "メッセージの投稿に失敗しました。"
       render :new
+      
     end
   end
   

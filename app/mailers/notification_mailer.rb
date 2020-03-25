@@ -3,7 +3,7 @@ class NotificationMailer < ApplicationMailer
 
   def send_notification(name, email, content)
     @name = name
-    @contact = email
+    @email = email
     @content = content
     mail(
       subject: "問い合わせがありました",

@@ -5,9 +5,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-9", style="padding-right: 0px;">
       <h3 class="text-center"><%= @room.name %></h3>
-      <%= link_to "新規作成", new_micropost_path, id: @room.id %>
+      <%= link_to "新規作成", new_micropost_path(room_id: @room.id), class: "btn btn-outline-primary btn-sm", :style => "right: 15px;" %>
       
       <ul class="nav nav-tabs nav-justified mb-3">
         <li class="nav-item"><a href="<%= room_path(@room) %>" class="nav-link<%= "active" if current_page?(room_path(@room)) %>"></a>投稿一覧<span class="badge badge-secondary"><%= @aount_microposts %></span></a></li>

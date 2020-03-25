@@ -2,6 +2,7 @@ class Micropost < ApplicationRecord
   belongs_to :user
   belongs_to :room
   
+  
   validates :content, presence: true, length: { maximum: 255 }
   
   mount_uploader :image, ImageUploader

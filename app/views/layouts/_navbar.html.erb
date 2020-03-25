@@ -8,7 +8,7 @@
       <ul class="navbar-nav">
         
         <% if logged_in? %>
-          <li class="nav-item active"><%= link_to "新規作成", new_micropost_path, class: "nav-link" %></li>
+          
           <li class="nav-item active"><%= link_to "お問い合わせ", new_inquiry_path, class: "nav-link" %></li>
           <li class="nav-item active">
             <%= link_to user_path(current_user), target: "_self" do %>

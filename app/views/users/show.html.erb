@@ -5,19 +5,23 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-9">
-      <h3 class="text-center"><%= @user.name %></h3>
-      <div>
+    <div class="col-md-9", style="padding-right: 0px;">
+      <h1 class="text-center"><%= @user.name %></h1>
+      <div class="media">
         <%if @user.image? %>
-          <%= image_tag @user.image.url, :size => "144x144", :style => "border-radius: 50%; margin-left: 50px;" %>
+          <%= image_tag @user.image.url, :size => "144x144", :style => "border-radius: 50%; margin-left: 10px;" %>
         <% else %>
           <i class="fas fa-user-circle", style="font-size: 9rem;"></i>
         <% end %>
+        <div class="media-body">
+          <%= link_to "プロフィールの編集", edit_user_path, class: 'btn btn-outline-primary btn-sm', :style => "position: absolute; right: 15px;" %>
+          <div style="margin-top: 30px; margin-left: 10px;">
+          <%= @user.self_introduction %>
+          </div>
+        </div>
       </div>
-      <%= link_to "プロフィールの編集", edit_user_path %>
-      <%= @user.self_introduction %>
       <ul class="nav nav-tabs nav-justified mb-3">
-        <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link<%= "active" if current_page?(user_path(@user)) %>"></a>投稿一覧<span class="badge badge-secondary"><%= @aount_microposts %></span></a></li>
+        <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link<%= "active" if current_page?(user_path(@user)) %>"></a>投稿一覧<span class="badge badge-secondary"></span></a></li>
       </ul>
       <%= render "microposts/microposts", microposts: @microposts %>         
     </div>

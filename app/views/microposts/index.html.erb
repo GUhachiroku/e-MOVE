@@ -12,7 +12,7 @@
     </div>
   </div>
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-9", style="padding-right: 0px;">
         <%= render "microposts/microposts", microposts: @microposts %>
       </div>
     <div class="split-item split-right col-md-3">
@@ -23,3 +23,10 @@
   </div>
 </div>
   
+<style>
+  @media (max-width: 767px) {
+  .l-sidebar-widget-area {
+    display: none;
+  }
+}
+</style>

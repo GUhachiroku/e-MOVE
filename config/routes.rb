@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   #サインアップぺージのurlを/signupにするため。なくてもよい
   get "signup", to: "users#new"
+
  
   resources :users, only: [:index, :show, :new, :create, :edit, :update]
   resources :microposts, only: [:index, :new, :create, :edit, :update, :destroy]

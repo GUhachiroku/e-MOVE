@@ -2,10 +2,10 @@
 <% if rooms.any? %>
   <ul class="list-unstyled">
     <% rooms.each do |room| %>
-      <li class="media", style="width: 100px;">
+      <li class="media", style="width: 120px;">
 
         <div class="media-body">
-          <%= link_to room.name, room_path(room), class: 'btn btn-outline-primary w-120' %>
+          <%= link_to room.name, room_path(room), class: 'btn btn-outline-primary w-100' %>
         </div>
       </li>
     <% end %>

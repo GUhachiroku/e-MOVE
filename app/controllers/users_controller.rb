@@ -30,10 +30,12 @@ class UsersController < ApplicationController
   end
   
   def edit
+    @rooms = Room.all
     @user = User.find(params[:id])
   end
   
   def update
+    @rooms = Room.all
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "プロフィールは編集されました。"

@@ -5,6 +5,7 @@ class InquiriesController < ApplicationController
   end
 
   def create
+    @rooms = Room.all
     @inquiry = Inquiry.new(inquiry_params)
     if @inquiry.save
       NotificationMailer.send_notification(@inquiry.name, @inquiry.email, @inquiry.content).deliver_later

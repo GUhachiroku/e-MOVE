@@ -14,6 +14,7 @@ class MicropostsController < ApplicationController
   end
   
   def create
+    @rooms = Room.all
     @room = Room.find(params[:room_id])
     @micropost = current_user.microposts.build(micropost_params)
     @micropost.room = @room
@@ -29,10 +30,12 @@ class MicropostsController < ApplicationController
   end
   
   def edit
+    @rooms = Room.all
     @micropost = Micropost.find(params[:id])
   end
     
   def update
+    @rooms = Room.all
     @micropost = Micropost.find(params[:id])
     if @micropost.update(micropost_params)
       flash[:success] = "メッセージは編集されました。"

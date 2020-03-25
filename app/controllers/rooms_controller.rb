@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
   end
   
   def show
+    @rooms = Room.all
     @room = Room.find(params[:id])
     @micropost = @room.microposts.build
     @microposts = @room.microposts.order(id: :desc).page(params[:page])

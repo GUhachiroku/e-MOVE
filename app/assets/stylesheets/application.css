@@ -93,3 +93,14 @@ img {
   border-left: solid 1px #dddddd;
 }
 
+@media screen and (max-width:600px){
+  .split-left{
+  display: none;
+  }
+}
+
+#myicon {
+    display: block;
+    margin: 0 0 0 auto;
+    margin-right: 10px;
+}

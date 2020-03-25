@@ -1,17 +1,18 @@
 class UsersController < ApplicationController
   # before_action :require_user_logged_in, only: [:index, :show]
   def index
-    @rooms = Room.all
     @users = User.order(id: :desc).page(params[:page]).per(20)
   end
 
   def show
+    @rooms = Room.all
     @user = User.find(params[:id])
     @microposts = @user.microposts.order(id: :desc).page(params[:page])
     counts(@user)
   end
 
   def new
+    @rooms = Room.all
     @user = User.new
   end
 

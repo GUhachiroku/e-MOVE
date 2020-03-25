@@ -9,6 +9,7 @@ class MicropostsController < ApplicationController
   end
   
   def new
+    @rooms = Room.all
     @micropost = Micropost.new
   end
   

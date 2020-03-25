@@ -1,5 +1,6 @@
 class InquiriesController < ApplicationController
   def new
+    @rooms = Room.all
     @inquiry = Inquiry.new
   end
 

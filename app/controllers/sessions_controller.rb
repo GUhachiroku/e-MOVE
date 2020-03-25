@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
+  
+  
   def new
+    @rooms = Room.all
   end
 
   def create

@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @rooms = Room.all
     email = params[:session][:email].downcase
     password = params[:session][:password]
     if login(email, password)

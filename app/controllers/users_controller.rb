@@ -31,7 +31,11 @@ class UsersController < ApplicationController
   
   def edit
     @rooms = Room.all
-    @user = User.find(params[:id])
+    if current_user == @user
+      @user = User.find(params[:id])
+    else
+      redirect_to root_url
+    end
   end
   
   def update
@@ -53,6 +57,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :self_introduction, :image)
   end
+  
   
   
 end

@@ -5,7 +5,11 @@ class ImageUploader < CarrierWave::Uploader::Base
    process resize_to_limit: [700, 600]
 
   # Choose what kind of storage to use for this uploader:
-  storage :file  #このコードによって保存先がrailsアプリ内となっている
+  if Rails.env.production?
+    include Cloudinary::CarrierWave
+  else
+    storage :file
+  end               #このコードによって保存先がrailsアプリ内となっている
   # storage :fog
 
   # Override the directory where uploaded files will be stored.

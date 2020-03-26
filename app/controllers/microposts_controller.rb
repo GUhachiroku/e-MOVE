@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
-  before_action :require_user_logged_in, only: [:create, :destroy]
-  before_action :correct_user, only: [:destroy]
+  before_action :require_user_logged_in, only: [:edit, :destroy]
+  before_action :correct_user, only: [:edit, :destroy]
   
   def index
     @rooms = Room.all

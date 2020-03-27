@@ -9,6 +9,7 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new(inquiry_params)
     if @inquiry.save
       NotificationMailer.send_notification(@inquiry.name, @inquiry.email, @inquiry.content).deliver_later
+      NotificationMailer.send_inquiry_to_user(@inquiry.name, @inquiry.email, @inquiry.content).deliver
       flash[:success] = "お問い合わせの送信に成功しました。"
       redirect_to root_url
     else

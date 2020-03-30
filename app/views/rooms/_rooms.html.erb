@@ -1,14 +1,56 @@
 
-<% if rooms.any? %>
-  <ul class="list-unstyled">
-    <% rooms.each do |room| %>
-      <li class="media", style="width: 120px;">
+<!--<% if rooms.any? %>-->
+<!--  <ul class="list-unstyled">-->
+<!--    <% rooms.each do |room| %>-->
+<!--      <li class="media", style="width: 120px;">-->
 
-        <div class="media-body">
-          <%= link_to room.name, room_path(room), class: 'btn btn-outline-primary w-100' %>
-        </div>
-      </li>
-    <% end %>
+<!--        <div class="media-body">-->
+<!--          <%= link_to room.name, room_path(room), class: 'btn btn-outline-primary w-100' %>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--    <% end %>-->
+<!--  </ul>-->
+<!--<% end %>-->
+
+
+
+<!--<h6>Coll of Duty</h6>-->
+<!--<ul style="list-style: none; padding-left: 15px;">-->
+<!--  <li><a href="/rooms/5" id="sidebar">CoD:WZ</a></li>-->
+<!--  <li><a href="/rooms/1" id="sidebar">CoD:MW</a></li>-->
+<!--  <li><a href="/rooms/2" id="sidebar">CoD:BO4</a></li>-->
+<!--  <li><a href="/rooms/3" id="sidebar">CoD:WWⅡ</a></li>-->
+<!--  <li><a href="/rooms/4" id="sidebar">CoD:IW</a></li>-->
+<!--  <li><a href="/rooms/6" id="sidebar">CoD:BO3</a></li>-->
+<!--</ul>-->
+
+<li class="active dropdown">
+  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="padding: 0;" id="sidebar">
+    Coll of Duty
+  </a>
+  <ul class="dropdown-menu" style="background-color:rgba(0,0,0,0); border: none;">
+    <a href="/rooms/5", class="dropdown-item" id="sidebar" style="color: white;">CoD:WZ</a>
+    <a href="/rooms/1", class="dropdown-item" id="sidebar" style="color: white;">CoD:MW</a>
+    <a href="/rooms/2", class="dropdown-item" id="sidebar" style="color: white;">CoD:BO4</a>
+    <a href="/rooms/3", class="dropdown-item" id="sidebar" style="color: white;">CoD:WWⅡ</a>
+    <a href="/rooms/4", class="dropdown-item" id="sidebar" style="color: white;">CoD:IW</a>
+    <a href="/rooms/6", class="dropdown-item" id="sidebar" style="color: white;">CoD:BO3</a>
   </ul>
+</li>
+<li class="active dropdown">
+  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="padding: 0;" id="sidebar">
+    Battlefield
+  </a>
+  <ul class="dropdown-menu" style="background-color:rgba(0,0,0,0); border: none;">
+    <a href="/rooms/7", class="dropdown-item" id="sidebar" style="color: white;">BFV</a>
+    <a href="/rooms/8", class="dropdown-item" id="sidebar" style="color: white;">BF1</a>
+    <a href="/rooms/9", class="dropdown-item" id="sidebar" style="color: white;">BF4</a>
+  </ul>
+</li>
+<li><a href="/rooms/10", class="dropdown-item" id="sidebar" style="color: red;">R6S</a></li>
+<li><a href="/rooms/11", class="dropdown-item" id="sidebar" style="color: white;">Apex Legends</a></li>
+<li><a href="/rooms/12", class="dropdown-item" id="sidebar" style="color: white;">PUBG</a></li>
+<li><a href="/rooms/13", class="dropdown-item" id="sidebar" style="color: white;">荒野行動</a></li>
+<li><a href="/rooms/14", class="dropdown-item" id="sidebar" style="color: white;">フォートナイト</a></li>
+<li><a href="/rooms/15", class="dropdown-item" id="sidebar" style="color: white;">Overwatch</a></li>
 
-<% end %>

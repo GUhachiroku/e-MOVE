@@ -1,11 +1,11 @@
-<div class="split">
-  <div class="split-item split-left">
-    <div class="split-left__inner">
-      <%= render 'rooms/rooms', rooms: @rooms %>
-    </div>
-  </div>
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-9", style="padding-right: 0px;">
+    <div class="col-md-2 d-none d-md-block" style="background: #bbbbbb; padding: 0;">
+      <div class="sidebar_fixed">
+        <%= render 'rooms/rooms', rooms: @rooms %>
+      </div>
+    </div>
+    <div class="col-md-7", style="padding: 0;">
       <h1 class="text-center"><%= @user.name %></h1>
       <div class="media">
         <%if @user.image? %>
@@ -25,15 +25,16 @@
       <ul class="nav nav-tabs nav-justified mb-3">
         <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link<%= "active" if current_page?(user_path(@user)) %>"></a>投稿一覧<span class="badge badge-secondary"></span></a></li>
       </ul>
-      <%= render "microposts/microposts", microposts: @microposts %>         
+      <%= render "microposts/microposts", microposts: @microposts %>
     </div>
-    <div class="split-item split-right col-md-3">
-      <div class="split-right__inner">
-        お知らせ
-      </div>
+    <div class="col-md-3", style="background: #bbbbbb;">
+      お知らせ
     </div>
   </div>
 </div>
+
+
+
 
 
  

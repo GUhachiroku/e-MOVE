@@ -15,13 +15,17 @@
  */
 
 
+header {
+    margin-bottom :21px;
+}
+
 .alert {
-    margin-top: -3px;
+    margin: 0;
 }
 
 body {
-    padding-top: 8px;   /* navbar固定で埋まってしまうため */
-　　margin : 10px;
+    padding-top: 4px;   /* navbar固定で埋まってしまうため */
+　　/*margin : 10px;*/
     
 }
 
@@ -46,6 +50,30 @@ body {
     color: #eeeeee;
 }
 
+
+
+#nav-dropdown:hover {
+    background-color: #708090;
+}
+
+#sidebar {
+    color: white;
+    text-decoration: none;
+    padding: 0;
+    
+}
+
+
+
+#sidebar:hover {
+    background-color: #708090;
+    
+}
+
+.sidebar_fixed {
+  position: sticky;
+  top: 70px;
+}
 
 .text-muted {
     display: inline-block;
@@ -89,37 +117,38 @@ img {
 }
 
 /*投稿一覧のスプリットレイアウト*/
-  .split{
-    display: table;
-    width: 100%;    
-}
-.split-item{
-    display: table-cell;
-}
-.split-left{
-    position: relative;
-    width: 20%;
-    border-right: solid 1px #dddddd;
-}
-.split-left__inner{
-    height: 100%;
-    position: fixed;
-    width: 0%;
-}
-.split-right__inner{
-  position: fixed;
-    height: 100%;  
-}
+/*  .split{*/
+/*    display: table;*/
+/*    width: 100%;    */
+/*}*/
+/*.split-item{*/
+/*    display: table-cell;*/
+/*}*/
+/*.split-left{*/
+/*    position: relative;*/
+/*    width: 20%;*/
+/*    border-right: solid 1px #dddddd;*/
+/*}*/
+/*.split-left__inner{*/
+/*    height: 100%;*/
+/*    position: fixed;*/
+/*    width: 0%;*/
+/*}*/
+/*.split-right__inner{*/
+/*  position: fixed;*/
+/*    height: 100%;  */
+/*}*/
 
-.split-right {
-  border-left: solid 1px #dddddd;
-}
+/*.split-right {*/
+/*  border-left: solid 1px #dddddd;*/
+/*}*/
 
-@media screen and (max-width:700px){
-  .split-left{
-  display: none;
-  }
-}
+/*@media screen and (min-width:600px){*/
+/*  #sidebar{*/
+/*  display: none;*/
+/*  }*/
+/*}*/
+
 
 #myicon {
     display: block;

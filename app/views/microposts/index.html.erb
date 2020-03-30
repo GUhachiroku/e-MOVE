@@ -1,32 +1,17 @@
 
-  <!--<div style="margin: 15px;">-->
-  <!--  <%= form_tag microposts_path, :method => "get" do %>-->
-  <!--  <%= text_field_tag :search, params[:search], placeholder: "キーワード検索" %>-->
-  <!--  <%= submit_tag "検索", :content => nil %>-->
-  <!--  <% end %>       -->
-  <!--</div>-->
-<div class="split">
-  <div class="split-item split-left">
-    <div class="split-left__inner">
-      <%= render 'rooms/rooms', rooms: @rooms %>
+  
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 d-none d-md-block" style="background: #bbbbbb; padding: 0;">
+      <div class="sidebar_fixed">
+        <%= render 'rooms/rooms', rooms: @rooms %>
+      </div>
     </div>
-  </div>
-    <div class="row">
-      <div class="col-md-9", style="padding-right: 0px;">
-        <%= render "microposts/microposts", microposts: @microposts %>
-      </div>
-    <div class="split-item split-right col-md-3">
-      <div class="split-right__inner">
-        お知らせ
-      </div>
+    <div class="col-md-7", style="padding: 0;">
+      <%= render "microposts/microposts", microposts: @microposts %>
+    </div>
+    <div class="col-md-3", style="background: #bbbbbb;">
+      お知らせ
     </div>
   </div>
 </div>
-  
-<style>
-  @media (max-width: 767px) {
-  .l-sidebar-widget-area {
-    display: none;
-  }
-}
-</style>

@@ -16,8 +16,8 @@
           <span class="text-muted" id="menu1">
             <div class="dropdown　media-body">
               <% if current_user == micropost.user %>
-                <button class="btn dropdown-toggle btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onfocus="this.blur();">
-                <!--<i class="fas fa-chevron-down"></i>-->
+                <button class="btn btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onfocus="this.blur();">
+                  <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-menu rounder-lg shadow" aria-labelledby="dropdownMenuButton">
                   <div class="dropdown-item"><i class="far fa-trash-alt"></i><%= link_to "　削除", micropost, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %></div>

@@ -12,12 +12,30 @@
         <% end %>
       </div>
     <% end %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" onfocus="this.blur();">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
-        <%= render 'rooms/rooms', rooms: @rooms %>
+        
+        <li class="active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="padding: 0;">
+            Coll of Duty
+          </a>
+          <ul class="dropdown-menu" style="background: none; border: none;">
+            <a href="/rooms/5", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:WZ</a>
+            <a href="/rooms/1", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:MW</a>
+            <a href="/rooms/2", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:BO4</a>
+            <a href="/rooms/3", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:WWⅡ</a>
+            <a href="/rooms/4", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:IW</a>
+            <a href="/rooms/6", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:BO3</a>
+
+          </ul>
+        </li>
+        
+        
+        
+        <li class="nav-item active"><a href="/", class="nav-link">COD:MW</a></li>
         <% if logged_in? %>
           <li class="nav-item active"><%= link_to "お問い合わせ", new_inquiry_path, class: "nav-link" %></li>
           <li class="nav-item active"><%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link" %></li>

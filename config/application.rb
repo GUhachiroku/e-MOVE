@@ -32,5 +32,4 @@ module EMove
     config.time_zone = "Tokyo"
     config.i18n.default_locale = :ja
   end
-  config.assets.initialize_on_precompile = false
 end

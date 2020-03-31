@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2 d-none d-md-block" style="background: #bbbbbb; padding: 0;">
+    <div class="col-md-2 d-none d-md-block" style="border-right: solid 1px #cccccc; padding: 0;">
       <div class="sidebar_fixed">
         <%= render 'rooms/rooms', rooms: @rooms %>
       </div>
@@ -9,9 +9,19 @@
       <h1 class="text-center"><%= @user.name %></h1>
       <div class="media">
         <%if @user.image? %>
-          <%= image_tag @user.image.url, :size => "144x144", :style => "border-radius: 50%; margin-left: 10px;" %>
+          <div id="profile-image1">
+            <%= image_tag @user.image.url, :size => "144x144", :style => "border-radius: 50%;" %>
+          </div>
+          <div id="profile-image2">
+            <%= image_tag @user.image.url, :size => "80x80", :style => "border-radius: 50%;" %>
+          </div>
         <% else %>
-          <i class="fas fa-user-circle", style="font-size: 9rem;"></i>
+        <div id="profile-icon1">
+          <i class="fas fa-user-circle" style="font-size: 9rem;"></i>
+        </div>
+        <div id="profile-icon2">
+          <i class="fas fa-user-circle" style="font-size: 5rem;"></i>
+        </div>
         <% end %>
         <div class="media-body">
           <% if current_user == @user %>
@@ -27,8 +37,10 @@
       </ul>
       <%= render "microposts/microposts", microposts: @microposts %>
     </div>
-    <div class="col-md-3", style="background: #bbbbbb;">
-      お知らせ
+    <div class="col-md-3" style="border-left: solid 1px #cccccc;">
+      <div class="sidebar_fixed" style="padding-top: 10px;">
+        <%= render "layouts/right_sidebar" %>
+      </div>
     </div>
   </div>
 </div>

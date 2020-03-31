@@ -1,6 +1,6 @@
 <header class="mb-4">
   <nav class="navbar navbar-dark fixed-top">
-    <a class="navbar-brand" href="/">e-MOVE</a>
+    <a class="navbar-brand" href="/" style="padding-left: 18px;">e-MOVE</a>
     <% if logged_in? %>
       <div id="myicon">
         <%= link_to user_path(current_user), target: "_self" do %>
@@ -19,30 +19,45 @@
       <ul class="navbar-nav">
         
         <li class="active dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="padding: 0;">
-            Coll of Duty
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="padding: 4px 0 4px 0;">
+            　　Coll of Duty
           </a>
-          <ul class="dropdown-menu" style="background: none; border: none;">
-            <a href="/rooms/5", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:WZ</a>
-            <a href="/rooms/1", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:MW</a>
-            <a href="/rooms/2", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:BO4</a>
-            <a href="/rooms/3", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:WWⅡ</a>
-            <a href="/rooms/4", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:IW</a>
-            <a href="/rooms/6", class="dropdown-item" id="nav-dropdown" style="color: white;">CoD:BO3</a>
-
+          <ul class="dropdown-menu" style="background: none; border: none; padding: 0;">
+            <a href="/rooms/5", class="dropdown-item" id="nav-dropdown" style="color: white;">　　CoD:WZ</a>
+            <a href="/rooms/1", class="dropdown-item" id="nav-dropdown" style="color: white;">　　CoD:MW</a>
+            <a href="/rooms/2", class="dropdown-item" id="nav-dropdown" style="color: white;">　　CoD:BO4</a>
+            <a href="/rooms/3", class="dropdown-item" id="nav-dropdown" style="color: white;">　　CoD:WWⅡ</a>
+            <a href="/rooms/4", class="dropdown-item" id="nav-dropdown" style="color: white;">　　CoD:IW</a>
+            <a href="/rooms/6", class="dropdown-item" id="nav-dropdown" style="color: white;">　　CoD:BO3</a>
           </ul>
         </li>
         
+        <li class="active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"style="padding: 4px 0 4px 0;">
+            　　Battlefield
+          </a>
+          <ul class="dropdown-menu" style="background: none; border: none; padding: 0;">
+            <a href="/rooms/7", class="dropdown-item" id="nav-dropdown" style="color: white;">　　BFV</a>
+            <a href="/rooms/8", class="dropdown-item" id="nav-dropdown" style="color: white;">　　BF1</a>
+            <a href="/rooms/9", class="dropdown-item" id="nav-dropdown" style="color: white;">　　BF4</a>
+          </ul>
+        </li>
         
+        <a href="/rooms/10", class="nav-link" id="nav-list" style="color: white;">　　R6S</a>
+        <a href="/rooms/15", class="nav-link" id="nav-list" style="color: white;">　　Overwatch</a>
+        <a href="/rooms/11", class="nav-link" id="nav-list" style="color: white;">　　Apex Legends</a>
+        <a href="/rooms/12", class="nav-link" id="nav-list" style="color: white;">　　PUBG</a>
+        <a href="/rooms/13", class="nav-link" id="nav-list" style="color: white;">　　荒野行動</a>
+        <a href="/rooms/14", class="nav-link" id="nav-list" style="color: white;">　　フォートナイト</a>
         
-        <li class="nav-item active"><a href="/", class="nav-link">COD:MW</a></li>
+        <p style="border-top: double 1px #FFFFFF; margin: 8px;"></p>
         <% if logged_in? %>
-          <li class="nav-item active"><%= link_to "お問い合わせ", new_inquiry_path, class: "nav-link" %></li>
-          <li class="nav-item active"><%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link" %></li>
+          <li class="nav-item active"><%= link_to "　　お問い合わせ", new_inquiry_path, class: "nav-link", id: "nav-list" %></li>
+          <li class="nav-item active"><%= link_to "　　ログアウト", logout_path, method: :delete, class: "nav-link", id: "nav-list" %></li>
         <% else %>
           <div class="nav-item dropdown"></div>
-            <li class="nav-item active"><%= link_to "サインアップ", signup_path, class: "nav-link" %></li>
-            <li class="nav-item active"><%= link_to "ログイン", login_path, class: "nav-link" %></li>
+            <li class="nav-item active"><%= link_to "　　サインアップ", signup_path, class: "nav-link", id: "nav-list" %></li>
+            <li class="nav-item active"><%= link_to "　　ログイン", login_path, class: "nav-link", id: "nav-list" %></li>
           </div>
         <% end %>      
           

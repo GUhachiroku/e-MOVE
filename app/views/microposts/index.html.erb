@@ -2,7 +2,7 @@
   
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2 d-none d-md-block" style="background: #bbbbbb; padding: 0;">
+    <div class="col-md-2 d-none d-md-block" style="border-right: solid 1px #cccccc; padding: 0;">
       <div class="sidebar_fixed">
         <%= render 'rooms/rooms', rooms: @rooms %>
       </div>
@@ -10,8 +10,10 @@
     <div class="col-md-7", style="padding: 0;">
       <%= render "microposts/microposts", microposts: @microposts %>
     </div>
-    <div class="col-md-3", style="background: #bbbbbb;">
-      お知らせ
+    <div class="col-md-3" style="border-left: solid 1px #cccccc;">
+      <div class="sidebar_fixed" style="padding-top: 10px;">
+        <%= render "layouts/right_sidebar" %>
+      </div>
     </div>
   </div>
 </div>

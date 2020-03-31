@@ -31,7 +31,7 @@ body {
 
 .navbar {
     background: linear-gradient(#0f2017, #203a43, #2c5364);
-    padding: 0 18px 0 18px;
+    padding: 0;
 }
 
 .navbar-brand {
@@ -42,7 +42,7 @@ body {
 
 .navbar-toggler {
     border: 0;
-    padding: 0;
+    padding: 0 18px 0 0;
 }
 
 /*userマーク*/
@@ -50,29 +50,36 @@ body {
     color: #eeeeee;
 }
 
-
+.nav-link:hover {
+    background-color: #708090;
+}
 
 #nav-dropdown:hover {
     background-color: #708090;
 }
 
-#sidebar {
-    color: white;
-    text-decoration: none;
-    padding: 0;
-    
+#nav-list {
+    padding: 4px 0 4px 0;
 }
 
-
+#sidebar {
+    color: black;
+    text-decoration: none;
+    padding-left: 0;
+    list-style: none;
+}
 
 #sidebar:hover {
-    background-color: #708090;
-    
+    background-color: #dddddd;
+}
+
+#sidebar:alink {
+    color: red;
 }
 
 .sidebar_fixed {
   position: sticky;
-  top: 70px;
+  top: 52px;
 }
 
 .text-muted {
@@ -82,6 +89,30 @@ body {
 
 #menu1 {
     float: right;
+}
+
+@media screen and (max-width:600px) { 
+  #profile-image1 {
+      display: none;
+  }
+}
+
+@media screen and (min-width:600px) { 
+  #profile-image2 {
+      display: none;
+  }
+}
+
+@media screen and (max-width:600px) { 
+  #profile-icon1 {
+      display: none;
+  }
+}
+
+@media screen and (min-width:600px) { 
+  #profile-icon2 {
+      display: none;
+  }
 }
 
 .media {
@@ -115,39 +146,6 @@ img {
     margin-top: 5px;
     margin-right: -5px;
 }
-
-/*投稿一覧のスプリットレイアウト*/
-/*  .split{*/
-/*    display: table;*/
-/*    width: 100%;    */
-/*}*/
-/*.split-item{*/
-/*    display: table-cell;*/
-/*}*/
-/*.split-left{*/
-/*    position: relative;*/
-/*    width: 20%;*/
-/*    border-right: solid 1px #dddddd;*/
-/*}*/
-/*.split-left__inner{*/
-/*    height: 100%;*/
-/*    position: fixed;*/
-/*    width: 0%;*/
-/*}*/
-/*.split-right__inner{*/
-/*  position: fixed;*/
-/*    height: 100%;  */
-/*}*/
-
-/*.split-right {*/
-/*  border-left: solid 1px #dddddd;*/
-/*}*/
-
-/*@media screen and (min-width:600px){*/
-/*  #sidebar{*/
-/*  display: none;*/
-/*  }*/
-/*}*/
 
 
 #myicon {

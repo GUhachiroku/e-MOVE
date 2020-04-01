@@ -62,20 +62,25 @@ body {
     padding: 4px 0 4px 0;
 }
 
-#sidebar {
-    color: black;
-    text-decoration: none;
+
+
+#sidebar1 {
     padding-left: 0;
     list-style: none;
 }
 
-#sidebar:hover {
+#sidebar2 {
+    color: black;
+    display: block;
+    text-decoration: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#sidebar1:hover {
     background-color: #dddddd;
 }
 
-#sidebar:alink {
-    color: red;
-}
 
 .sidebar_fixed {
   position: sticky;

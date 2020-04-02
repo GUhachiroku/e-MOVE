@@ -5,7 +5,7 @@ class MicropostsController < ApplicationController
   def index
     @rooms = Room.all
     @micropost = current_user.microposts.build if logged_in?
-    @microposts = Micropost.order(id: :desc).search(params[:search]).page(params[:page]).per(50)
+    @microposts = Micropost.order(id: :desc).search(params[:search]).page(params[:page]).per(20)
   end
   
   def new

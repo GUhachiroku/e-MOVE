@@ -22,11 +22,12 @@
     <script type="text/javascript">
     $(function(){
         $('#sidebar1 a').each(function(){
-            var $href = $(this).attr('href');
-            if(location.href.match($href)) {
-            $(this).addClass('active');
+            let href = location.href.slice(location.href.indexOf('/rooms') + 1);
+            let sidebarHref = $(this).attr('href').slice($(this).attr('href').indexOf('/rooms') + 1);
+            if(href === sidebarHref) {
+              $(this).addClass('active');
             } else {
-            $(this).removeClass('active');
+              $(this).removeClass('active');
             }
         });
     });

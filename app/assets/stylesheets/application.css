@@ -36,7 +36,7 @@ body {
 
 .navbar-brand {
     padding: 0;
-    font-family: fantasy;
+    font-family: Impact;
     font-size: 35px;
 }
 
@@ -68,6 +68,11 @@ body {
     list-style: none;
 }
 
+#sidebar1 a.active {
+  color: white;
+  background-color: #009378;
+}
+
 #sidebar2 {
     color: black;
     display: block;
@@ -84,6 +89,16 @@ body {
 .sidebar_fixed {
   position: sticky;
   top: 52px;
+}
+
+#right-sidebar2 {
+    padding: 10px 0 20px 0;
+}
+
+@media screen and (min-width:768px) {
+    #right-sidebar1 {
+        border-left: solid 1px #cccccc;
+    }
 }
 
 .text-muted {

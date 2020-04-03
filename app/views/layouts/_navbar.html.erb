@@ -5,7 +5,7 @@
       <div id="myicon">
         <%= link_to user_path(current_user), target: "_self" do %>
           <%if current_user.image? %>
-            <%= image_tag current_user.image.url, :size => "32x32", :style => "border-radius: 50%; margin-top: 4px;" %>
+            <%= image_tag current_user.image.url, :size => "32x32", :class => "nav-image" %>
           <% else %>
             <i class="fas fa-user-circle"></i>
           <% end %>
@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="active dropdown">
-          <a class="nav-link dropdown-toggle navbar-menu" href="#" data-toggle="dropdown" style="padding-left: 40px;">
+          <a class="nav-link dropdown-toggle navbar-menu" href="#" data-toggle="dropdown">
             Coll of Duty
           </a>
           <ul class="dropdown-menu">
@@ -31,7 +31,7 @@
           </ul>
         </li>
         <li class="active dropdown">
-          <a class="nav-link dropdown-toggle navbar-menu" href="#" data-toggle="dropdown" style="padding-left: 40px;">
+          <a class="nav-link dropdown-toggle navbar-menu" href="#" data-toggle="dropdown">
             Battlefield
           </a>
           <ul class="dropdown-menu">

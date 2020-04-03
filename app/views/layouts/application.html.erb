@@ -21,7 +21,7 @@
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript">
     $(function(){
-        $('#sidebar1 a').each(function(){
+        $('.sidebar1 a').each(function(){
             let href = location.href.slice(location.href.indexOf('/rooms') + 1);
             let sidebarHref = $(this).attr('href').slice($(this).attr('href').indexOf('/rooms') + 1);
             if(href === sidebarHref) {

@@ -25,6 +25,8 @@ header {
 
 body {
     padding-top: 4px;   /* navbar固定で埋まってしまうため */
+    color: #333;
+    background-color: #fff;
 }
 
 .navbar {
@@ -33,7 +35,7 @@ body {
 }
 
 .navbar-brand {
-    padding: 0;
+    padding: 0 0 0 18px;
     font-family: Impact;
     font-size: 35px;
 }
@@ -48,55 +50,111 @@ body {
     color: #eeeeee;
 }
 
-.nav-link:hover {
+nav div .fa-user-circle {
+    font-size: 2rem;
+    margin-top: 4px;
+}
+
+#myicon {
+    display: block;
+    margin: 0 0 0 auto;
+    margin-right: 10px;
+}
+
+nav ul a .nav-dropdown:hover {
     background-color: #708090;
 }
 
-#nav-dropdown:hover {
+nav ul .dropdown-menu {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+nav ul .dropdown-item {
+    color: white;
+    padding-left: 60px;
+}
+
+nav ul .dropdown-item:hover {
     background-color: #708090;
+    color: white;
 }
 
-#nav-list {
-    padding: 4px 0 4px 0;
+nav li .navbar-menu {
+    padding: 4px 0 4px 40px;
+    color: white;
+    display: block;
+}
+
+.navbar-menu:hover {
+    background-color: #708090;
+    color: white;
+    text-decoration: none;
 }
 
 
-#sidebar1 {
+/*sidebar*/
+
+.sidebar1 {
     padding-left: 0;
     list-style: none;
+    text-decoration: none;
 }
 
-#sidebar1 a.active {
+.sidebar2:hover {
+    color: #333;
+    background-color: #dddddd;
+    text-decoration: none;
+}
+
+.sidebar3:hover {
+    color: #333;
+    background-color: #dddddd;
+    text-decoration: none;
+}
+
+.sidebar1 a.active {
   color: white;
   background-color: #009378;
 }
 
-#sidebar2 {
-    color: black;
+.sidebar2 {
+    color: #333;
     display: block;
     text-decoration: none;
     padding-top: 4px;
     padding-bottom: 4px;
+    padding-left: 30px;
 }
 
-#sidebar1:hover {
-    background-color: #dddddd;
+.sidebar3 {
+    color: #333;
+    display: block;
+    text-decoration: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 18px;
 }
-
 
 .sidebar_fixed {
   position: sticky;
   top: 52px;
 }
 
-#right-sidebar2 {
+.right-sidebar2 {
     padding: 10px 0 20px 0;
 }
 
 @media screen and (min-width:768px) {
-    #right-sidebar1 {
+    .right-sidebar1 {
         border-left: solid 1px #cccccc;
     }
+}
+
+.d-md-block {
+    border-right: solid 1px #cccccc;
+    padding: 0;
 }
 
 .text-muted {
@@ -155,7 +213,11 @@ body {
 
 img {
     max-width: 100%;
-    
+}
+
+.self_introduction {
+    margin-top: 30px;
+    margin-left: 10px;
 }
 
 #icon1 {
@@ -164,10 +226,8 @@ img {
     margin-right: -5px;
 }
 
-
-#myicon {
-    display: block;
-    margin: 0 0 0 auto;
+.fa-user-circle {
+    font-size: 3rem;
     margin-right: 10px;
 }
 
@@ -177,4 +237,6 @@ img {
     background-color: #f89406;;
     color: white;
     border-radius: 15%;
+    padding: 0 4px 0 4px;
 }
+

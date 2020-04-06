@@ -61,6 +61,8 @@ gem 'cloudinary'
 gem 'mini_magick'
 gem 'rails-i18n'
 
+gem 'devise'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'

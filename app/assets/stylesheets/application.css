@@ -87,7 +87,7 @@ nav ul .dropdown-item:hover {
 }
 
 nav li .navbar-menu {
-    padding: 4px 0 4px 40px;
+    padding: 4px 0 4px 40px !important;
     color: white;
     display: block;
 }

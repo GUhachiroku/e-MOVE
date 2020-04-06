@@ -14,18 +14,23 @@ class MicropostsController < ApplicationController
   end
   
   def create
-    @rooms = Room.all
-    @room = Room.find(params[:room_id])
-    @micropost = current_user.microposts.build(micropost_params)
-    @micropost.room = @room
-    if @micropost.save
-      flash[:success] = "メッセージを投稿しました。"
-      redirect_to @room
-    else 
-      @microposts = current_user.microposts.order(id: :desc).page(params[:page])
-      flash.now[:danger] = "メッセージの投稿に失敗しました。"
-      render :new
-      
+    if logged_in?
+      @rooms = Room.all
+      @room = Room.find(params[:room_id])
+      @micropost = current_user.microposts.build(micropost_params)
+      @micropost.room = @room 
+      if @micropost.save
+        flash[:success] = "メッセージを投稿しました。"
+        redirect_to @room
+      else 
+        @microposts = current_user.microposts.order(id: :desc).page(params[:page])
+        flash.now[:danger] = "メッセージの投稿に失敗しました。"
+        render :new
+      end
+    else
+      @user = User.new
+      flash.now[:danger] = "投稿するにはログインして下さい。"
+      render 'sessions/new'
     end
   end
   

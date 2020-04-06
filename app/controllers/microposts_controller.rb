@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  before_action :require_user_logged_in, only: [:edit, :destroy]
+  before_action :require_user_logged_in, only: [:new, :edit, :destroy]
   before_action :correct_user, only: [:edit, :destroy]
   
   def index
@@ -14,7 +14,6 @@ class MicropostsController < ApplicationController
   end
   
   def create
-    if logged_in?
       @rooms = Room.all
       @room = Room.find(params[:room_id])
       @micropost = current_user.microposts.build(micropost_params)
@@ -27,11 +26,6 @@ class MicropostsController < ApplicationController
         flash.now[:danger] = "メッセージの投稿に失敗しました。"
         render :new
       end
-    else
-      @user = User.new
-      flash.now[:danger] = "投稿するにはログインして下さい。"
-      render 'sessions/new'
-    end
   end
   
   def edit

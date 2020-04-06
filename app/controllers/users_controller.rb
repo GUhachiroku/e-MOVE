@@ -47,6 +47,8 @@ class UsersController < ApplicationController
       flash.now[:danger] = "プロフィールは編集されませんでした。"
       render :edit
     end
+    
+    
   end
   
   
